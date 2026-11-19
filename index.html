@@ -1,0 +1,54 @@
+<!doctype html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1, maximum-scale=1, user-scalable=no, viewport-fit=cover" />
+    <meta name="theme-color" content="#101a20" />
+    <meta name="description" content="A tiny, brave adventure in the wilds of Emberfall." />
+    <title>Emberfall — Wilds of the Lost Coast</title>
+  </head>
+  <body>
+    <main id="game-shell">
+      <div id="world" aria-label="3D voxel wilderness"></div>
+      <div class="vignette"></div>
+      <header class="topbar">
+        <a class="brand" href="#" aria-label="Emberfall home"><span class="brand-mark">✳</span><span>EMBERFALL<small>WILDS OF THE LOST COAST</small></span></a>
+        <div class="top-center"><span class="season-mark">✦</span><span id="season-label">DAY 01&nbsp; · &nbsp;SUNLIT</span></div>
+        <button class="icon-button" id="sound-toggle" aria-label="Toggle sound">♫</button>
+      </header>
+      <section class="quest-card panel">
+        <div class="eyebrow"><span class="live-dot"></span> FIELD JOURNAL <span id="quest-count" class="quest-count">0 / 03</span></div>
+        <h1>First light</h1>
+        <p>Make this wild place a little more like home.</p>
+        <div class="quest-line"><span class="quest-icon">⌁</span><span>Gather wildwood</span><b id="quest-wood">0 / 3</b></div>
+        <div class="quest-line"><span class="quest-icon">◇</span><span>Find a moonstone</span><b id="quest-stone">0 / 2</b></div>
+        <div class="quest-line"><span class="quest-icon">⌂</span><span>Raise a campfire</span><b id="quest-fire">0 / 1</b></div>
+        <div class="quest-progress"><i id="quest-progress"></i></div>
+      </section>
+      <div class="location-pill"><span class="pin">⌖</span><span><b id="location-name">THE MOSSWOOD</b><small id="location-sub">Lost Coast · 38° north</small></span></div>
+      <aside class="right-rail">
+        <div class="map-card panel"><canvas id="minimap" width="140" height="140"></canvas><span class="map-n">N</span><div class="map-caption">FIELD MAP <i></i></div></div>
+        <div class="weather-pill panel"><span id="weather-icon">☀</span><span><b id="weather-name">CLEAR SKIES</b><small id="temperature">18° · LIGHT BREEZE</small></span></div>
+      </aside>
+      <section class="bottom-left panel status-card">
+        <div class="portrait"><span id="portrait-icon">✦</span><i></i></div>
+        <div class="status-info"><div class="player-label"><b id="player-name">ROWAN</b><span>THE WAYFINDER</span></div><div class="meter-row"><span>♡</span><div class="meter"><i id="health-meter"></i></div><small id="health-number">100</small></div><div class="meter-row hunger"><span>♨</span><div class="meter"><i id="hunger-meter"></i></div><small id="hunger-number">87</small></div></div>
+        <button class="switch-character" id="character-button" title="Switch character">⇄</button>
+      </section>
+      <section class="inventory panel"><div class="inventory-label">YOUR PACK <span>▾</span></div><div id="inventory-items" class="inventory-items"></div></section>
+      <div class="control-hint" id="control-hint"><span>WASD</span> move <i>·</i> <span>SPACE</span> gather / interact <i>·</i> <span>F</span> strike <i>·</i> <span>B</span> build</div>
+      <div class="mobile-controls" aria-label="Touch controls">
+        <div id="joystick" class="joystick"><div class="joystick-ring"></div><div id="stick" class="stick"></div></div>
+        <div class="mobile-actions"><button id="touch-build" class="touch-action">⌂<small>BUILD</small></button><button id="touch-use" class="touch-action touch-primary">✦<small>USE</small></button><button id="touch-attack" class="touch-action">⚔<small>STRIKE</small></button></div>
+      </div>
+      <div id="toast" class="toast" role="status"></div>
+      <div id="start-screen" class="start-screen">
+        <div class="start-card"><div class="title-flourish">✳ &nbsp; EST. AFTER THE LONG WINTER &nbsp; ✳</div><div class="start-title">The wilds<br><em>are calling.</em></div><p>Beyond the old road, the forest remembers.<br>Find your footing. Make a home. See what answers.</p><div class="start-meta"><span>✦ &nbsp; A LITTLE OPEN-WORLD ADVENTURE</span><span>⌁ &nbsp; MADE FOR THE WANDERING</span></div><button id="start-button" class="start-button">STEP INTO THE WILDS <span>↗</span></button><div class="start-foot">NO MAP. NO RUSH. JUST YOU & THE HORIZON.</div></div>
+      </div>
+      <div id="craft-menu" class="craft-menu panel"><div class="craft-head"><span>FIELDCRAFT</span><button id="close-craft">×</button></div><p>Make something useful. Materials are gathered in the wild.</p><button class="recipe" data-recipe="fire"><span class="recipe-icon fire-icon">✹</span><span><b>Wayfarer's fire</b><small>3 wildwood · 2 stone</small></span><i>BUILD</i></button><button class="recipe" data-recipe="blade"><span class="recipe-icon blade-icon">⚔</span><span><b>Flintwood blade</b><small>2 wildwood · 2 stone</small></span><i>CRAFT</i></button><button class="recipe" data-recipe="cart"><span class="recipe-icon cart-icon">▰</span><span><b>Trail cart</b><small>5 wildwood · 3 stone</small></span><i>BUILD</i></button><small class="craft-note">Place builds close by · tap a recipe to make it</small></div>
+      <div id="game-over" class="game-over"><div><span>✦</span><h2>The forest is quiet.</h2><p>Your journey can begin again.</p><button id="restart-button">TRY AGAIN ↗</button></div></div>
+      <div id="interact-label" class="interact-label">SPACE &nbsp; TO GATHER</div>
+    </main>
+    <script type="module" src="/src/main.js"></script>
+  </body>
+</html>
